@@ -1,0 +1,66 @@
+= content_for :title, 'Home'
+
+.container
+  .row
+    .col-md-4.col-xs-12.col-sm-12
+    .col-md-4.col-xs-12.col-sm-12
+      %div#mobile
+        %div#top.p-t-5
+          %span
+            -#%i.fa.fa-video-camera.icon-attr
+            .pull-right
+              -#%i.fa.fa-circle-o.icon-circle
+              %small.icon-attr
+                = Time.now.strftime("%I:%M %p")
+        %div#search-result
+          .text-center.p-t-30
+            %p
+              You can add a contact number or
+            %p
+              search your contacts
+          -#= render partial: 'home/search_results', locals: {users: @users}
+        %div#search
+          .list-group
+            .list-group-item
+              = render partial: 'form'
+        %div#contact_detail
+          - if @user
+            = render partial: 'contact_details', locals: {user: @user}
+        %div#numbers
+          .row.number_iterate
+            - @array.each do |value|
+              - if value == 0
+                .col-xs-4
+                  %h2.pointer.numberCircle.keypad-show
+                    ='*'
+                .col-xs-4
+                  .number
+                    %h2.pointer.numberCircle.keypad-show
+                      = value
+                .col-xs-4
+                  %h2.pointer.numberCircle.keypad-show
+                    = '#'
+              - else
+                .col-xs-4
+                  .number
+                    %h2.pointer.numberCircle.keypad-show
+                      = value
+          .row.p-l-50
+            .col-xs-4.p-t-20.pointer
+              %img.img-responsive.image_phone.phone.keypad-show{src: asset_path('phone.png')}
+            .col-xs-4.p-t-20.pointer
+              %img.img-responsive.image_phone.keypad{src: asset_path('keypad.png')}
+            .col-xs-4.pointer.p-t-15
+              -#= link_to u.name, view_path(:name => "#{u.name}"), method: :get, remote: true
+              = link_to "+", add_contact_form_path, method: :get, remote: true, class: 'img-responsive image_phone plus plus-sign keypad-show'
+              -#%img.img-responsive.image_phone.plus{src: asset_path('plus1.png')}
+        -#%div#bottom{style: "padding-left: 40px"}
+        -#  .col-xs-4
+        -#    %img.img-responsive.image_phone{src: asset_path('phone.png')}
+        -#  .col-xs-4
+        -#    %span.pointer
+        -#      %img.img-responsive.image_phone{src: asset_path('keypad.png')}
+        -#  .col-xs-4
+        -#    %img.img-responsive.image_phone{src: asset_path('plus1.png')}
+
+    -#.col-md-4.col-xs-12.col-sm-12

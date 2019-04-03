@@ -1,0 +1,177 @@
+/**
+ *=require font-awesome.min
+ *=require bootstrap.min
+ *= require_self
+ */
+
+#mobile {
+    height: 640px;
+    background-color: #ffffff;
+}
+
+#top {
+    height: 30px;
+    background-color: #097fc9;
+}
+
+#search-result {
+    height: 190px;
+    background-color: #f2f2f2;
+}
+
+#search {
+    height: 40px;
+    background-color: #097fc9
+}
+
+#numbers {
+    height: 345px;
+}
+
+#numbers1 {
+    height: 300px;
+    padding-top: 30px
+}
+
+#bottom {
+    height: 50px;
+    background-color: #e7e7e7;
+}
+
+.icon-attr {
+    color: white;
+    padding: 10px;
+}
+
+.icon-circle {
+    color: white;
+    padding: 10px 0px 10px;
+}
+
+.form-control {
+    height: 43px;
+    border: none;
+    transition: none;
+    box-shadow: none;
+}
+
+.list-group-item:last-child {
+    border-bottom-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+}
+
+.detail_layout {
+    height: 150px;
+    border: 1px solid #ccc;
+    padding: 10px;
+}
+
+.list-group-item:first-child {
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+}
+
+.list-group-item {
+    padding: 0px;
+    height: 45px;
+}
+
+#inner-right {
+    max-height: 180px;
+    overflow-y: scroll;
+    background: ivory;
+}
+
+.p-t-30 {
+    padding-top: 30px
+}
+
+.p-t-20 {
+    padding-top: 10px
+}
+
+.number_iterate {
+    padding: 10px;
+    margin-left: 30px;
+    color: #097fc9;
+}
+
+.detail {
+    margin: 10px;
+}
+
+.pointer {
+    cursor: pointer;
+}
+
+.p-a-5 {
+    padding: 5px;
+}
+
+.p-l-none {
+    padding-left: 0px;
+}
+
+.image_phone {
+    width: 50px;
+    height: 50px;
+}
+
+.image_close {
+    width: 20px;
+    height: 20px;
+}
+
+.p-t-5 {
+    padding-top: 5px;
+}
+
+.numberCircle {
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    padding: 4px;
+    background: #fff;
+    border: 2px solid #2b542c;
+    color: #666;
+    text-align: center;
+    font: 26px Arial, sans-serif;
+}
+
+.list-group-item {
+    border-top-width: 0px;
+    padding-bottom: 0px;
+    border-left-width: 0px;
+    border-bottom-width: 0px;
+    border-right-width: 0px;
+}
+
+.p-t-15 {
+    padding-top: 15px;
+}
+
+.p-l-50 {
+    padding-left: 50px;
+}
+
+.plus-sign {
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    padding: 4px;
+    background: #00FFFF;
+    color: #ffffff;
+    text-align: center;
+    font: 26px Arial, sans-serif;
+    text-decoration: none !important;
+}
+
+.keypad-show {
+    visibility: hidden;
+}
+
+.input-heignt {
+    height: 25px !important;
+    border: 1px solid #ccc;
+    border-radius: 0px;
+}

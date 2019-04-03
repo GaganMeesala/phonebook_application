@@ -16,5 +16,6 @@
 !/log/.keep
 /tmp
 
-/.idea/workspace.xml
 /.idea/vcs.xml
+.idea/workspace.xml
+.byebug_history

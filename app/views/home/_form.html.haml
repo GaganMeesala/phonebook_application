@@ -1,0 +1,3 @@
+= form_tag('/search', remote: true, method: :get, id: 'search-form') do
+  %input.form-control.no-border{type: 'text', id: 'search-contact', class: 'search-contact', name: 'search' }
+%input.hide{:type => "submit", value: 'submit', class: 'search_button'}
