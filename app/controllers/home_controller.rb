@@ -8,7 +8,7 @@ class HomeController < ApplicationController
         format.js
       end
     else
-      @array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0]
+      @hash = {1 => "", 2 => "ABC", 3 => "DEF", 4 => "GHI", 5 => "JKL", 6 => "MNO", 7 => "PQRS", 8 => "TUV", 9 => "WXYZ", 0 => ""}
     end
   end
 
@@ -32,7 +32,7 @@ class HomeController < ApplicationController
     if search_key.blank?
       @users = {}
     else
-      @users = User.search(search_key).order('created_at ASC')
+      @users = User.search(search_key)
       respond_to do |format|
         format.js
         format.html

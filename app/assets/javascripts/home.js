@@ -18,7 +18,7 @@ $('body').on('click', '.closebutton', function (event) {
 });
 
 $('body').on('click', '.number', function (event) {
-    var number = $(event.currentTarget).find('h2').text();
+    var number = $(event.currentTarget).find('span:nth-child(1)').text();
     var number1 = number.replace(/\s/g, '');
     $(event.currentTarget).parents('#mobile').find('#search-contact').val(function (index, val) {
         return val + number1;

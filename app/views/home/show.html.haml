@@ -28,22 +28,26 @@
             = render partial: 'contact_details', locals: {user: @user}
         %div#numbers
           .row.number_iterate
-            - @array.each do |value|
-              - if value == 0
+            - @hash.each do |key, value|
+              - if key == 0
                 .col-xs-4
-                  %h2.pointer.numberCircle.keypad-show
-                    ='*'
+                  %span.pointer.numberCircle.keypad-show{:style => "display: block;font-size: 1.8em;"}
+                    = "*"
                 .col-xs-4
                   .number
-                    %h2.pointer.numberCircle.keypad-show
+                    %span.pointer.numberCircle.keypad-show{:style => "display: block;font-size: 1.8em;"}
+                      = key
+                    %span.keypad-show{:style => "font-size: 0.6em; padding-left: 13px;"}
                       = value
                 .col-xs-4
-                  %h2.pointer.numberCircle.keypad-show
-                    = '#'
+                  %span.pointer.numberCircle.keypad-show{:style => "display: block;font-size: 1.8em;"}
+                    = "#"
               - else
                 .col-xs-4
                   .number
-                    %h2.pointer.numberCircle.keypad-show
+                    %span.pointer.numberCircle.keypad-show{:style => "display: block;font-size: 1.8em;"}
+                      = key
+                    %span.keypad-show{:style => "font-size: 0.6em; padding-left: 13px;"}
                       = value
           .row.p-l-50
             .col-xs-4.p-t-20.pointer
@@ -51,16 +55,4 @@
             .col-xs-4.p-t-20.pointer
               %img.img-responsive.image_phone.keypad{src: asset_path('keypad.png')}
             .col-xs-4.pointer.p-t-15
-              -#= link_to u.name, view_path(:name => "#{u.name}"), method: :get, remote: true
               = link_to "+", add_contact_form_path, method: :get, remote: true, class: 'img-responsive image_phone plus plus-sign keypad-show'
-              -#%img.img-responsive.image_phone.plus{src: asset_path('plus1.png')}
-        -#%div#bottom{style: "padding-left: 40px"}
-        -#  .col-xs-4
-        -#    %img.img-responsive.image_phone{src: asset_path('phone.png')}
-        -#  .col-xs-4
-        -#    %span.pointer
-        -#      %img.img-responsive.image_phone{src: asset_path('keypad.png')}
-        -#  .col-xs-4
-        -#    %img.img-responsive.image_phone{src: asset_path('plus1.png')}
-
-    -#.col-md-4.col-xs-12.col-sm-12
