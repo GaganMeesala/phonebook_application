@@ -38,5 +38,39 @@ $('body').on('click', '.keypad', function(){
 
 $('body').on('click', '.closebutton1', function (event) {
     $(event.currentTarget).parents('#numbers2').addClass('hide');
+    $(event.currentTarget).parents('#mobile').find('#search-result').find('.noraml_text').removeClass('hide');
+});
+
+$('body').on('click', '.hai', function (event) {
+    $(event.currentTarget).parents('#mobile').find('#search').find('#search-contact:input').val('');
+});
+
+$('body').on('click', '.closebutton', function (event) {
+    $(event.currentTarget).parents('#mobile').find('#search-result').find('.actual_data').text('');
+    $(event.currentTarget).parents('#mobile').find('#search-result').find('.normal_text').removeClass('hide');
+});
+
+$('body').on('click', '.closebutton1', function (event) {
     $(event.currentTarget).parents('#mobile').find('#search-result').removeClass('hide');
+});
+
+$('body').on('click', '.plus-sign', function (event) {
+    $(event.currentTarget).parents('#mobile').find('#search').find('#search-contact:input').val('');
+    $(event.currentTarget).parents('#mobile').find('#search-result').find('.actual_data').text('');
+    $(event.currentTarget).parents('#mobile').find('#search-result').find('.normal_text').removeClass('hide');
+});
+
+$("#search-contact:input").on("change", function() {
+    var value = $(this).val().toLowerCase();
+    if ($(this).text().toLowerCase().indexOf(value) > -1) {
+        $(this).parents('#mobile').find('#search-result').find('.normal_text').removeClass('hide');
+    } else if (value == "") {
+        $(this).parents('#mobile').find('#search-result').find('.normal_text').removeClass('hide');
+    }
+});
+
+$('body').on('click', '.keypad-button', function (event) {
+    $(event.currentTarget).parents('#mobile').find('#search').find('#search-contact:input').val('');
+    $(event.currentTarget).parents('#mobile').find('#search-result').find('.actual_data').text('');
+    $(event.currentTarget).parents('#mobile').find('#search-result').find('.normal_text').removeClass('hide');
 });

@@ -6,17 +6,15 @@
       <div id="mobile">
         <div class="p-t-5" id="top">
           <span>
-            <% #%i.fa.fa-video-camera.icon-attr %>
             <div class="pull-right">
-              <% #%i.fa.fa-circle-o.icon-circle %>
               <small class="icon-attr">
-                <%= Time.now.strftime("%I:%M %p") %>
+                <%= Time.now.strftime("%-m-%b-%Y %I:%M %p") %>
               </small>
             </div>
           </span>
         </div>
         <div id="search-result">
-          <div class="text-center p-t-30">
+          <div class="text-center p-t-30 normal_text">
             <p>
               You can add a contact number or
             </p>
@@ -24,7 +22,7 @@
               search your contacts
             </p>
           </div>
-          <%# #= render partial: 'home/search_results', locals: {users: @users} %>
+          <div class="actual_data"></div>
         </div>
         <div id="search">
           <div class="list-group">
@@ -81,7 +79,7 @@
               <img class="img-responsive image_phone phone keypad-show" src="<%= asset_path('phone.png') %>"/>
             </div>
             <div class="col-xs-4 p-t-20 pointer">
-              <img class="img-responsive image_phone keypad" src="<%= asset_path('keypad.png') %>"/>
+              <img class="img-responsive image_phone keypad keypad-button" src="<%= asset_path('keypad.png') %>"/>
             </div>
             <div class="col-xs-4 pointer p-t-15">
               <%= link_to "+", add_contact_form_path, method: :get, remote: true, class: 'img-responsive image_phone plus plus-sign keypad-show' %>

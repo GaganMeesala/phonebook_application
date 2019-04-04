@@ -1,1 +1,2 @@
-$('#search-result').html("<%= escape_javascript render(:partial => 'home/search_results', :locals => { :users => @users }) %>");
+$('#search-result').find('.normal_text').addClass('hide');
+$('#search-result').find('.actual_data').html("<%= escape_javascript render(:partial => 'home/search_results', :locals => { :users => @users }) %>");
