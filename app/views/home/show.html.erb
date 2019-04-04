@@ -1,0 +1,94 @@
+<%= content_for :title, 'Home' %>
+<div class="container">
+  <div class="row">
+    <div class="col-md-4 col-xs-12 col-sm-12"></div>
+    <div class="col-md-4 col-xs-12 col-sm-12">
+      <div id="mobile">
+        <div class="p-t-5" id="top">
+          <span>
+            <% #%i.fa.fa-video-camera.icon-attr %>
+            <div class="pull-right">
+              <% #%i.fa.fa-circle-o.icon-circle %>
+              <small class="icon-attr">
+                <%= Time.now.strftime("%I:%M %p") %>
+              </small>
+            </div>
+          </span>
+        </div>
+        <div id="search-result">
+          <div class="text-center p-t-30">
+            <p>
+              You can add a contact number or
+            </p>
+            <p>
+              search your contacts
+            </p>
+          </div>
+          <%# #= render partial: 'home/search_results', locals: {users: @users} %>
+        </div>
+        <div id="search">
+          <div class="list-group">
+            <div class="list-group-item">
+              <%= render partial: 'form' %>
+            </div>
+          </div>
+        </div>
+        <div id="contact_detail">
+          <% if @user %>
+            <%= render partial: 'contact_details', locals: {user: @user} %>
+          <% end %>
+        </div>
+        <div id="numbers">
+          <div class="row number_iterate">
+            <% @hash.each do |key, value| %>
+              <% if key == 0 %>
+                <div class="col-xs-4">
+                  <span class="pointer numberCircle keypad-show" style="display: block;font-size: 1.8em;">
+                    <%= "*" %>
+                  </span>
+                </div>
+                <div class="col-xs-4">
+                  <div class="number">
+                    <span class="pointer numberCircle keypad-show" style="display: block;font-size: 1.8em;">
+                      <%= key %>
+                    </span>
+                    <span class="keypad-show" style="font-size: 0.6em; padding-left: 13px;">
+                      <%= value %>
+                    </span>
+                  </div>
+                </div>
+                <div class="col-xs-4">
+                  <span class="pointer numberCircle keypad-show" style="display: block;font-size: 1.8em;">
+                    <%= "#" %>
+                  </span>
+                </div>
+              <% else %>
+                <div class="col-xs-4">
+                  <div class="number">
+                    <span class="pointer numberCircle keypad-show" style="display: block;font-size: 1.8em;">
+                      <%= key %>
+                    </span>
+                    <span class="keypad-show" style="font-size: 0.6em; padding-left: 13px;">
+                      <%= value %>
+                    </span>
+                  </div>
+                </div>
+              <% end %>
+            <% end %>
+          </div>
+          <div class="row p-l-50">
+            <div class="col-xs-4 p-t-20 pointer">
+              <img class="img-responsive image_phone phone keypad-show" src="<%= asset_path('phone.png') %>"/>
+            </div>
+            <div class="col-xs-4 p-t-20 pointer">
+              <img class="img-responsive image_phone keypad" src="<%= asset_path('keypad.png') %>"/>
+            </div>
+            <div class="col-xs-4 pointer p-t-15">
+              <%= link_to "+", add_contact_form_path, method: :get, remote: true, class: 'img-responsive image_phone plus plus-sign keypad-show' %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,17 @@
+<div id="numbers1">
+  <div class="row detail">
+    <div class="col-md-12">
+      <div class="detail_layout" style="height: 150px;border: 1px solid #ccc;padding: 10px">
+        <p class="pull-right closebutton pointer">
+          <img class="img-responsive image_close" src="<%= asset_path('close.png') %>"/>
+        </p>
+        <h4>
+          <%= "Name: #{@user.name}" %>
+        </h4>
+        <h5>
+          <%= "Number: #{@user.number}" %>
+        </h5>
+      </div>
+    </div>
+  </div>
+</div>

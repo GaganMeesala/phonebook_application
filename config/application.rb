@@ -29,8 +29,8 @@ module PhonebookApplication
     # config.active_record.raise_in_transactional_callbacks = false
 
     config.assets.enabled = true
-    config.generators do |g|
-      g.template_engine :haml
-    end
+    # config.generators do |g|
+    #   g.template_engine :haml
+    # end
   end
 end

@@ -1,0 +1,16 @@
+<div class="p-a-5">
+  <div id="inner-right">
+    <% if users %>
+      <% users.each_with_index do |u, index| %>
+        <div class="hai">
+          <h4>
+            <%= link_to u.name, view_path(:name => "#{u.name}"), method: :get, remote: true %>
+          </h4>
+          <h5>
+            <%= u.number %>
+          </h5>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+</div>

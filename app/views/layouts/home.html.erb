@@ -1,0 +1,20 @@
+<html>
+  <head>
+    <title>
+      <%= yield(:title).empty? ? 'Phone Book Application' : "Phone Book Application| #{yield(:title)}" %>
+    </title>
+    <%= stylesheet_link_tag 'home' %>
+    <%= csrf_meta_tags %>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" type="text/css">/</link>
+  </head>
+  <body style="background-color:#000000">
+    <div id="container-fluid">
+      <div class="main-color" id="main-wrap">
+        <%= yield %>
+      </div>
+    </div>
+  </body>
+</html>
+<%= javascript_include_tag 'home' %>

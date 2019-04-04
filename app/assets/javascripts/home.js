@@ -36,10 +36,6 @@ $('body').on('click', '.keypad', function(){
     }
 });
 
-$('body').on('click', '.plus', function(){
-
-});
-
 $('body').on('click', '.closebutton1', function (event) {
     $(event.currentTarget).parents('#numbers2').addClass('hide');
     $(event.currentTarget).parents('#mobile').find('#search-result').removeClass('hide');

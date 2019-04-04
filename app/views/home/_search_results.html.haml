@@ -1,9 +1,0 @@
-%div.p-a-5
-  #inner-right
-    - if users
-      - users.each_with_index do |u, index|
-        %div.hai
-          %h4
-            = link_to u.name, view_path(:name => "#{u.name}"), method: :get, remote: true
-          %h5
-            = u.number

@@ -50,7 +50,3 @@ end
 
 # Database
 gem 'pg'
-
-# Haml Templating Language
-gem 'haml-rails'
-
