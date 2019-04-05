@@ -10,14 +10,28 @@ $(document).ready(function () {
         var form = $(event.currentTarget).parent();
         form.submit();
     });
+
+    $('.cancel_button').click(function (event) {
+        var value = $(event.currentTarget).prev().val();
+        if (value == undefined) {
+        } else {
+            var word = value.slice(0,-1);
+            $(event.currentTarget).parents('#search-form').find('#search-contact').val(word);
+            var form = $(event.currentTarget).parent('#search-form');
+            form.submit();
+        }
+    });
 });
 
 $('body').on('click', '.closebutton', function (event) {
     $(event.currentTarget).parents('#numbers1').addClass('hide');
     $(event.currentTarget).parents('#mobile').find('#numbers').removeClass('hide');
+    $(event.currentTarget).parents('#mobile').find('#search').find('#search-contact:input').val('');
 });
 
 $('body').on('click', '.number', function (event) {
+
+    $(event.currentTarget).parents('#mobile').find('#search').css("visibility", "visible");
 
     var id = $(event.currentTarget).parents('#mobile').find('#contact_detail').find('#create-contact').attr('id');
 
@@ -40,14 +54,8 @@ $('body').on('click', '.number', function (event) {
     form.submit();
 });
 
-
-$('body').on('click', '.closebutton1', function (event) {
-    $(event.currentTarget).parents('#numbers2').addClass('hide');
-    $(event.currentTarget).parents('#mobile').find('#search-result').find('.noraml_text').removeClass('hide');
-});
-
 $('body').on('click', '.hai', function (event) {
-    $(event.currentTarget).parents('#mobile').find('#search').find('#search-contact:input').val('');
+    $(event.currentTarget).parents('#mobile').find('#search').css("visibility", "hidden");
 });
 
 $('body').on('click', '.closebutton', function (event) {
@@ -56,14 +64,18 @@ $('body').on('click', '.closebutton', function (event) {
 });
 
 $('body').on('click', '.closebutton1', function (event) {
+    $(event.currentTarget).parents('#mobile').find('#search').css("visibility", "visible");
     $(event.currentTarget).parents('#mobile').find('#search-result').removeClass('hide');
     $(event.currentTarget).parents('#mobile').find('#contact_detail').html('');
+    $(event.currentTarget).parents('#numbers2').addClass('hide');
+    $(event.currentTarget).parents('#mobile').find('#search-result').find('.noraml_text').removeClass('hide');
 });
 
 $('body').on('click', '.plus-sign', function (event) {
     $(event.currentTarget).parents('#mobile').find('#search').find('#search-contact:input').val('');
     $(event.currentTarget).parents('#mobile').find('#search-result').find('.actual_data').text('');
     $(event.currentTarget).parents('#mobile').find('#search-result').find('.normal_text').removeClass('hide');
+    $(event.currentTarget).parents('#mobile').find('#search').css("visibility", "hidden");
 });
 
 $("#search-contact:input").on("change", function() {
@@ -76,6 +88,12 @@ $("#search-contact:input").on("change", function() {
 });
 
 $('body').on('click', '.keypad-button', function (event) {
+    $(event.currentTarget).parents('#mobile').find('#search').find('#search-contact:input').val('');
+    $(event.currentTarget).parents('#mobile').find('#search-result').find('.actual_data').text('');
+    $(event.currentTarget).parents('#mobile').find('#search-result').find('.normal_text').removeClass('hide');
+});
+
+$('body').on('click', '.cancel_button', function (event) {
     $(event.currentTarget).parents('#mobile').find('#search').find('#search-contact:input').val('');
     $(event.currentTarget).parents('#mobile').find('#search-result').find('.actual_data').text('');
     $(event.currentTarget).parents('#mobile').find('#search-result').find('.normal_text').removeClass('hide');

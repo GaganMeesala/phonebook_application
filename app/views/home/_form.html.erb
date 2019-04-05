@@ -1,4 +1,8 @@
 <%= form_tag('/search', remote: true, method: :get, id: 'search-form') do %>
-  <input class="search-contact form-control no-border" id="search-contact" name="search" type="text"></input>
+  <div class="border_1">
+    <input class="search-contact form-control no-border" id="search-contact" name="search" type="text"></input>
+    <span id="clear" class="numberCircle1 pull-right pointer m-r-10 cancel_button">x</span>
+    <%= link_to "+", add_contact_form_path, method: :get, remote: true, class: 'numberCircle1 pull-left pointer plus-sign' %>
+  </div>
 <% end %>
 <input class="search_button hide" type="submit" value="submit"></input>
