@@ -6,9 +6,9 @@
           <img class="img-responsive image_close" src="<%= asset_path('close.png') %>"/>
         </p>
         <%= form_tag('/create_contact', remote: true, method: :post, id: 'create-contact') do %>
-          <input autofocus="<%= true %>" class="username form-control input-heignt" id="username" name="name" placeholder="Name" required="<%= true %>" type="text"></input>
+          <input class="username form-control input-height" id="username" name="name" placeholder="Name" required="<%= true %>" type="text"></input>
           <br/>
-          <input class="number form-control input-heignt" id="number" name="number" placeholder="Number" required="<%= true %>" type="text"></input>
+          <input class="number form-control input-height" id="number" name="number" placeholder="Number" required="<%= true %>" type="text"></input>
           <br/>
           <input class="submit_button btn btn-primary" id="submit-contact" type="submit" value="create"></input>
         <% end %>

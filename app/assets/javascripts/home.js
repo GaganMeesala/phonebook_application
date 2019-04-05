@@ -18,23 +18,28 @@ $('body').on('click', '.closebutton', function (event) {
 });
 
 $('body').on('click', '.number', function (event) {
+
+    var id = $(event.currentTarget).parents('#mobile').find('#contact_detail').find('#create-contact').attr('id');
+
     var number = $(event.currentTarget).find('span:nth-child(1)').text();
     var number1 = number.replace(/\s/g, '');
-    $(event.currentTarget).parents('#mobile').find('#search-contact').val(function (index, val) {
-        return val + number1;
-    });
-    var form = $(event.currentTarget).parents('#mobile').find('#search-contact').parent();
+
+    if (id == 'create-contact') {
+        $(event.currentTarget).parents('#mobile').find('#number').val(function (index, val) {
+            return val + number1;
+        });
+        var form = $(event.currentTarget).parents('#mobile').find('#create-contact').parent();
+    } else {
+        var number = $(event.currentTarget).find('span:nth-child(1)').text();
+        var number1 = number.replace(/\s/g, '');
+        $(event.currentTarget).parents('#mobile').find('#search-contact').val(function (index, val) {
+            return val + number1;
+        });
+        var form = $(event.currentTarget).parents('#mobile').find('#search-contact').parent();
+    }
     form.submit();
 });
 
-$('body').on('click', '.keypad', function(){
-    var val = $(this).parents('#numbers').find('.keypad-show').first().css("visibility")
-    if (val == "hidden") {
-        $(this).parents('#numbers').find('.keypad-show').css("visibility", 'visible')
-    } else {
-        $(this).parents('#numbers').find('.keypad-show').css("visibility", 'hidden')
-    }
-});
 
 $('body').on('click', '.closebutton1', function (event) {
     $(event.currentTarget).parents('#numbers2').addClass('hide');
@@ -52,6 +57,7 @@ $('body').on('click', '.closebutton', function (event) {
 
 $('body').on('click', '.closebutton1', function (event) {
     $(event.currentTarget).parents('#mobile').find('#search-result').removeClass('hide');
+    $(event.currentTarget).parents('#mobile').find('#contact_detail').html('');
 });
 
 $('body').on('click', '.plus-sign', function (event) {
